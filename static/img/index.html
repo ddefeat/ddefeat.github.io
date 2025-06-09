@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FinderGG – Coming Soon</title>
+
+<!--  =====  QUICK CSS  =====  -->
+<style>
+    :root{
+        --accent:#00d1ff;          /* ändra om du byter profilfärg   */
+        --light:#ffffff;
+        --dark :#0a0d14;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif;}
+
+    body,html{
+        height:100%;
+        color:var(--light);
+        background:url("/static/img/background.png") center/cover no-repeat fixed;
+    }
+    /* Lägg ett mörkt, halvtransparent lager så texten poppar */
+    .overlay{
+        position:fixed;inset:0;
+        background:rgba(10,13,20,.72);
+        backdrop-filter:blur(2px);
+        z-index:-1;
+    }
+
+    /* Centrera allt */
+    .wrapper{
+        min-height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:2rem 1rem;
+    }
+
+    h1{
+        font-size:clamp(2.5rem,6vw,4.5rem);
+        font-weight:800;
+        margin-bottom:.5rem;
+        line-height:1.1;
+    }
+    h1 span{color:var(--accent);}
+    p.lead{
+        max-width:600px;
+        font-size:clamp(1rem,2.5vw,1.25rem);
+        opacity:.9;
+        margin:.5rem auto 2.5rem;
+    }
+
+    /* =====  Newsletter form  ===== */
+    form{
+        display:flex;
+        gap:.5rem;
+        flex-wrap:wrap;
+        justify-content:center;
+        max-width:600px;
+        width:100%;
+    }
+    input[type=email]{
+        flex:1 1 240px;
+        padding:.9rem 1rem;
+        border-radius:30px;
+        border:none;
+        font-size:1rem;
+        outline:none;
+    }
+    button{
+        padding:.9rem 1.5rem;
+        border:none;
+        border-radius:30px;
+        background:var(--accent);
+        color:var(--dark);
+        font-weight:700;
+        font-size:1rem;
+        cursor:pointer;
+        transition:transform .15s,box-shadow .15s;
+    }
+    button:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.35);}
+    button:active{transform:translateY(0);box-shadow:none;}
+
+    /* =====  Footer  ===== */
+    footer{
+        margin-top:3rem;
+        font-size:.75rem;
+        opacity:.7;
+    }
+    footer a{color:var(--accent);text-decoration:none;}
+
+    /* =====  Logo  ===== */
+    .logo{
+        position:fixed;
+        top:0.1rem;
+        left:1.25rem;
+        width:160px;           /* adjust size as needed */
+        height:auto;
+        z-index:1000;
+    }
+</style>
+</head>
+
+<body>
+<div class="overlay"></div>
+<img class="logo" src="/static/img/logo.png" alt="FinderGG logo">
+
+<div class="wrapper">
+    <h1>Level-Up With <span>Finder.GG</span></h1>
+    <p class="lead">
+        We’re building the easiest way for CS2 &amp; Rocket League players to
+        find serious teammates. <br>
+        Sign up below & be first in the lobby!
+    </p>
+
+    <!--  Replace the “#” action with Mailchimp / Brevo / etc.  -->
+    <form action="http://eepurl.com/jgGgPE" method="POST">
+        <input  type="email" name="email" placeholder="Your e-mail"
+                required autocomplete="email">
+        <button type="submit">Join Wait-List</button>
+    </form>
+
+    <footer>
+        <p>18+ only | &copy; 2025 FinderGG – All rights reserved
+    </footer>
+</div>
+
+</body>
+</html>
